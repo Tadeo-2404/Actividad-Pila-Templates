@@ -1,6 +1,6 @@
 #ifndef PILA_HPP
 #define PILA_HPP
-#define MAX 10
+#define MAX 2
 
 template <class T>
 class Pila
@@ -15,6 +15,9 @@ public:
     void operator - (T*);
     int PilaLlena();
     int PilaVacia();
+    int getTope();
+    void setTope(int tope);
+    T& getUltimo();
 };
 
 

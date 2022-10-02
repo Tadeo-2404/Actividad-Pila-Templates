@@ -7,11 +7,11 @@ class Cheque
 {
 private:
     int Numero, CuentaADepositar;
-    string Banco;
+    char Banco[10];
     double Monto;
 public:
     Cheque();
-    Cheque(int, string, int, double);
+    Cheque(int, char[], int, double);
     ~Cheque();
     void ImprimeDatos();
 
@@ -22,7 +22,7 @@ public:
 
     void setNumero(int numero);
     void setCuentaADepositar(int cuentaADepositar);
-    void setBanco(string banco);
+    void setBanco(char banco[]);
     void setMonto(double monto);
 };
  

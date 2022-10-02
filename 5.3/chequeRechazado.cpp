@@ -1,20 +1,27 @@
 #include <iostream>
-#include "../5.3/ChequeRechazado.hpp"
+#include "ChequeRechazado.hpp"
 using namespace std;
 
 ChequeRechazado::ChequeRechazado() {
 
 };
 
-ChequeRechazado::ChequeRechazado(int numeroCuenta, string banco, int cuentaADepositar, double monto) {
+ChequeRechazado::~ChequeRechazado() {
+    
+}
+
+ChequeRechazado::ChequeRechazado(int numeroCuenta, char *banco, int cuentaADepositar, double monto) {
+    setNumero(numeroCuenta);
+    setBanco(banco);
+    setCuentaADepositar(cuentaADepositar);
+    setMonto(monto);
     this->Cargo = monto*0.10;
 };
 
 void ChequeRechazado::ImprimeDatos()
 {
     Cheque::ImprimeDatos();
-    cout << endl;
-    cout << "Cargo por rechazo: " << this->Cargo;
+    cout << "Cargo por rechazo: " << this->Cargo <<endl;
 }
 
 void ChequeRechazado::setCargo(double cargo)

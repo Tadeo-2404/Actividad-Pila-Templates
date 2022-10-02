@@ -1,7 +1,7 @@
 #ifndef CHEQUERECHAZADO_HPP
 #define CHEQUERECHAZADO_HPP
 #include <iostream>
-#include "../5.3/Cheque.hpp"
+#include "Cheque.hpp"
 
 class ChequeRechazado: public Cheque
 {
@@ -9,7 +9,7 @@ private:
     double Cargo;
 public:
     ChequeRechazado();
-    ChequeRechazado(int, string, int, double);
+    ChequeRechazado(int, char[], int, double);
     ~ChequeRechazado();
     void ImprimeDatos();
     double getCargo();

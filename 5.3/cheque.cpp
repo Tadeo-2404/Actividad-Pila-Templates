@@ -1,5 +1,6 @@
 #include <iostream>
-#include "../5.3/Cheque.hpp"
+#include "Cheque.hpp"
+#include <string.h>
 using namespace std;
 
 Cheque::Cheque() 
@@ -7,10 +8,10 @@ Cheque::Cheque()
 
 }
 
-Cheque::Cheque(int Numero, string Banco, int CuentaADepositar, double Monto)
+Cheque::Cheque(int Numero, char *Banco, int CuentaADepositar, double Monto)
 {
     this->Numero = Numero;
-    this->Banco = Banco;
+    strcpy(this->Banco, Banco);
     this->CuentaADepositar = CuentaADepositar;
     this->Monto = Monto;
 }
@@ -23,7 +24,7 @@ void Cheque::ImprimeDatos()
 {
     cout << "Numero de cheque: " << this->Numero <<endl;
     cout << "Banco: " << this->Banco <<endl;
-    cout << "Despositado: " << this->CuentaADepositar <<endl;
+    cout << "Cuenta a Depositar: " << this->CuentaADepositar <<endl;
     cout << "Monto: " << this->Monto <<endl;
 }
 
@@ -52,9 +53,9 @@ void Cheque::setNumero(int numero)
     this->Numero = numero;
 }
 
-void Cheque::setBanco(string banco)
+void Cheque::setBanco(char *banco)
 {
-    this->Banco = banco;
+    strcpy(this->Banco, banco);
 }
 
 void Cheque::setCuentaADepositar(int cuenta) 

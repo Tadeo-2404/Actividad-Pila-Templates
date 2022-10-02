@@ -1,5 +1,5 @@
 #include <iostream>
-#include <5.2/Pila.hpp>
+#include "Pila.hpp"
 using namespace std;
 
 template <class T>
@@ -26,6 +26,24 @@ int Pila<T>::PilaVacia()
     } else {
         return 0;
     }
+}
+
+template <class T>
+int Pila<T>::getTope()
+{
+    return this->Tope;
+}
+
+template <class T>
+void Pila<T>::setTope(int newTope)
+{
+    Tope = newTope;
+}
+
+template <class T>
+T& Pila<T>::getUltimo()
+{
+    return this->EspacioPila[Tope];
 }
 
 template <class T>
